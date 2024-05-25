@@ -1,0 +1,191 @@
+[
+  {
+    "Nombre": "Vino Tinto Malbec",
+    "Añada": 2018,
+    "Nota de cata": "Aromas a frutas rojas y especias, con taninos suaves y equilibrados",
+    "Imagen de etiqueta": "vinotintomalbec.jpg",
+    "Precio en ARS": 750
+  },
+  {
+    "Nombre": "Vino Blanco Chardonnay",
+    "Añada": 2019,
+    "Nota de cata": "Notas cítricas y florales, con una acidez refrescante",
+    "Imagen de etiqueta": "vinoblancochardonnay.jpg",
+    "Precio en ARS": 650
+  },
+  {
+    "Nombre": "Vino Rosado Cabernet Franc",
+    "Añada": 2020,
+    "Nota de cata": "Intenso color rosado, con aromas a frutos rojos y una buena estructura en boca",
+    "Imagen de etiqueta": "vinorosadocabernetfranc.jpg",
+    "Precio en ARS": 700
+  },
+  {
+    "Nombre": "Vino Tinto Cabernet Sauvignon",
+    "Añada": 2017,
+    "Nota de cata": "Notas a frutas negras y especias, con un final largo y persistente",
+    "Imagen de etiqueta": "vinotintocabernetsauvignon.jpg",
+    "Precio en ARS": 800
+  },
+  {
+    "Nombre": "Vino Blanco Sauvignon Blanc",
+    "Añada": 2020,
+    "Nota de cata": "Aromas a frutas tropicales y cítricas, con una acidez vibrante",
+    "Imagen de etiqueta": "vinoblancosaunignonblanc.jpg",
+    "Precio en ARS": 700
+  },
+  {
+    "Nombre": "Vino Tinto Bonarda",
+    "Añada": 2019,
+    "Nota de cata": "Notas a frutas rojas y negras, con taninos suaves y redondos",
+    "Imagen de etiqueta": "vinotintobonarda.jpg",
+    "Precio en ARS": 600
+  },
+  {
+    "Nombre": "Vino Rosado Malbec",
+    "Añada": 2021,
+    "Nota de cata": "Aromas a frutas frescas y flores, con una acidez equilibrada",
+    "Imagen de etiqueta": "vinorosadomalbec.jpg",
+    "Precio en ARS": 750
+  },
+  {
+    "Nombre": "Vino Tinto Syrah",
+    "Añada": 2018,
+    "Nota de cata": "Notas a frutas negras y especias, con taninos firmes y elegantes",
+    "Imagen de etiqueta": "vinotintosyrah.jpg",
+    "Precio en ARS": 850
+  },
+  {
+    "Nombre": "Vino Blanco Torrontés",
+    "Añada": 2020,
+    "Nota de cata": "Aromas a flores blancas y cítricos, con una acidez refrescante",
+    "Imagen de etiqueta": "vinoblanctorrontes.jpg",
+    "Precio en ARS": 600
+  },
+  {
+    "Nombre": "Vino Tinto Merlot",
+    "Añada": 2017,
+    "Nota de cata": "Notas a frutas rojas y especias, con taninos suaves y sedosos",
+    "Imagen de etiqueta": "vinotintomerlot.jpg",
+    "Precio en ARS": 700
+  },
+  {
+    "Nombre": "Vino Tinto Malbec Reserva",
+    "Añada": 2016,
+    "Nota de cata": "Notas a frutas maduras y vainilla, con una estructura potente y elegante",
+    "Imagen de etiqueta": "vinotintomalbecreserva.jpg",
+    "Precio en ARS": 1200
+  },
+  {
+    "Nombre": "Vino Blanco Chardonnay Reserva",
+    "Añada": 2018,
+    "Nota de cata": "Aromas a frutas tropicales y tostadas, con una acidez equilibrada",
+    "Imagen de etiqueta": "vinoblancochardonnayreserva.jpg",
+    "Precio en ARS": 1100
+  },
+  {
+    "Nombre": "Vino Tinto Cabernet Franc",
+    "Añada": 2017,
+    "Nota de cata": "Notas a frutas rojas y especias, con taninos suaves y redondos",
+    "Imagen de etiqueta": "vinotintocabernetfranc.jpg",
+    "Precio en ARS": 900
+  },
+  {
+    "Nombre": "Vino Blanco Sauvignon Blanc Reserva",
+    "Añada": 2019,
+    "Nota de cata": "Aromas a frutas cítricas y hierbas, con una acidez vibrante",
+    "Imagen de etiqueta": "vinoblancosaunignonblancreserva.jpg",
+    "Precio en ARS": 1000
+  },
+  {
+    "Nombre": "Vino Tinto Malbec Gran Reserva",
+    "Añada": 2015,
+    "Nota de cata": "Notas a frutas maduras y especias, con taninos sedosos y elegantes",
+    "Imagen de etiqueta": "vinotintomalbecgranreserva.jpg",
+    "Precio en ARS": 1500
+  },
+  {
+    "Nombre": "Vino Blanco Chardonnay Gran Reserva",
+    "Añada": 2017,
+    "Nota de cata": "Aromas a frutas tropicales y vainilla, con una acidez refrescante",
+    "Imagen de etiqueta": "vinoblancochardonnaygranreserva.jpg",
+    "Precio en ARS": 1400
+  },
+  {
+    "Nombre": "Vino Tinto Cabernet Sauvignon Reserva",
+    "Añada": 2016,
+    "Nota de cata": "Notas a frutas negras y especias, con taninos maduros y redondos",
+    "Imagen de etiqueta": "vinotintocabernetsauvignonreserva.jpg",
+    "Precio en ARS": 1300
+  },
+  {
+    "Nombre": "Vino Blanco Sauvignon Blanc Late Harvest",
+    "Añada": 2019,
+    "Nota de cata": "Aromas a frutas tropicales y miel, con una acidez equilibrada",
+    "Imagen de etiqueta": "vinoblancosaunignonblanclateharvest.jpg",
+    "Precio en ARS": 1600
+  },
+  {
+    "Nombre": "Vino Tinto Bonarda Reserva",
+    "Añada": 2018,
+    "Nota de cata": "Notas a frutas rojas y especias, con taninos maduros y redondos",
+    "Imagen de etiqueta": "vinotintobonardareserva.jpg",
+    "Precio en ARS": 1100
+  },
+  {
+    "Nombre": "Vino Blanco Torrontés Reserva",
+    "Añada": 2017,
+    "Nota de cata": "Aromas a flores blancas y cítricos, con una acidez refrescante",
+    "Imagen de etiqueta": "vinoblanctorrontesreserva.jpg",
+    "Precio en ARS": 1000
+  },
+  {
+    "Nombre": "Vino Tinto Malbec Rosado",
+    "Añada": 2021,
+    "Nota de cata": "Notas a frutas rojas y flores, con una acidez vibrante",
+    "Imagen de etiqueta": "vinotintomalbecrosado.jpg",
+    "Precio en ARS": 800
+  },
+  {
+    "Nombre": "Vino Blanco Chardonnay Semillón",
+    "Añada": 2019,
+    "Nota de cata": "Aromas a frutas tropicales y cítricas, con una acidez refrescante",
+    "Imagen de etiqueta": "vinoblancochardonnaysemillon.jpg",
+    "Precio en ARS": 900
+  },
+  {
+    "Nombre": "Vino Tinto Cabernet Sauvignon Gran Reserva",
+    "Añada": 2015,
+    "Nota de cata": "Notas a frutas negras y especias, con taninos maduros y elegantes",
+    "Imagen de etiqueta": "vinotintocabernetsauvignongranreserva.jpg",
+    "Precio en ARS": 1800
+  },
+  {
+    "Nombre": "Vino Blanco Sauvignon Blanc Late Harvest Reserva",
+    "Añada": 2018,
+    "Nota de cata": "Aromas a frutas tropicales y miel, con una acidez equilibrada",
+    "Imagen de etiqueta": "vinoblancosaunignonblanclateharvestreserva.jpg",
+    "Precio en ARS": 2100
+  },
+  {
+    "Nombre": "Vino Tinto Syrah Reserva",
+    "Añada": 2017,
+    "Nota de cata": "Notas a frutas negras y especias, con taninos firmes y elegantes",
+    "Imagen de etiqueta": "vinotintosyrahreserva.jpg",
+    "Precio en ARS": 1400
+  },
+  {
+    "Nombre": "Vino Blanco Torrontés Tardío",
+    "Añada": 2019,
+    "Nota de cata": "Aromas a flores blancas y cítricos, con una acidez refrescante",
+    "Imagen de etiqueta": "vinoblanctorrontestardio.jpg",
+    "Precio en ARS": 1200
+  },
+  {
+    "Nombre": "Vino Tinto Merlot Reserva",
+    "Añada": 2016,
+    "Nota de cata": "Notas a frutas rojas y especias, con taninos suaves y sedosos",
+    "Imagen de etiqueta": "vinotintomerlotreserva.jpg",
+    "Precio en ARS": 1300
+  }
+]
