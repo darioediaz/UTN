@@ -1,4 +1,4 @@
-class PantallaImportarBodega:
+class PantallaImportBodega:
   def habilitarVentana(self):
     # metodos
     pass
