@@ -1,10 +1,10 @@
 class Vino:
 
-  def __init__(self, nombre, anio, notaCata, imagen, precio):
+  def __init__(self, nombre, anio, notaCata, imgEtiqueta, precio):
     self.nombre = nombre
     self.anio = anio
     self.notaCata = notaCata
-    self.imagen = imagen
+    self.imgEtiqueta = imgEtiqueta
     self.precio = precio
     
   def sosEsteVino(self):
