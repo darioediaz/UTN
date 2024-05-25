@@ -4,5 +4,4 @@ class Maridaje:
         self.descripcion = descripcion
 
     def sosMaridaje(self):
-      # metodos
       pass  

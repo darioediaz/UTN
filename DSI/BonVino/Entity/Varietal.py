@@ -3,10 +3,11 @@ class Varietal:
         self.descripcion = descripcion
         self.porcentajeComposicion = porcentajeComposicion
 
-    def conocerTipoUva(self, tipo_uva):
-        # metodos
+    def conocerTipoUva(self):
         pass
 
     def mostrarPorcentaje(self):
-      # metodos 
       pass
+  
+    def esDeTipoUva(self):
+        pass
