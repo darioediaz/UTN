@@ -1,7 +1,0 @@
-{
-  "python.analysis.extraPaths": [
-    "./DSI/BonVino/Boundary",
-    "./DSI/BonVino/Control",
-    "./DSI/BonVino/Entity"
-  ]
-}
