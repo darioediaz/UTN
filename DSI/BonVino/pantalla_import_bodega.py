@@ -14,7 +14,9 @@ class PantallaImportBodega():
         for bodega in bodegas_a_actualizar:
             print(f"{i})-{bodega.nombre}\n")
             i = i + 1
-        seleccion = int(input("Seleccione el número de la bodega que desea actualizar:"))
+        seleccion = int(input("Seleccione el número de la bodega que desea actualizar: "))
+        while seleccion < 1 or seleccion > i-1:
+            seleccion = int(input("Esa opcion no es valida, seleccione el número de la bodega que desea actualizar: "))
         self.tomar_seleccion_bodega(bodegas_a_actualizar[seleccion - 1])
 
     def tomar_seleccion_bodega(self, bodega):

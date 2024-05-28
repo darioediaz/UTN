@@ -41,12 +41,12 @@ class Vino:
 
         maridajes_str = "\n".join([f"  - {maridaje.nombre}: {maridaje.descripcion}" for maridaje in self.maridaje])
 
-        return (f"Nombre: {self.nombre}\n"
-                f"Añada: {self.añada}\n"
-                f"Imagen de la etiqueta: {self.imagen_etiqueta}\n"
-                f"Nota de cata de la bodega: {self.nota_de_cata_bodega}\n"
-                f"Precio: {self.precio}\n"
-                f"Fecha de última actualización: {self.fecha_actualizacion}\n"
-                f"Varietales:\n{varietales_str}\n"
-                f"Maridajes:\n{maridajes_str}\n"
-                f"Bodega: {self.bodega.nombre}")
+        return (f"\n◙ Nombre: {self.nombre}\n"
+                f"◙ Añada: {self.añada}\n"
+                f"◙ Imagen de la etiqueta: {self.imagen_etiqueta}\n"
+                f"◙ Nota de cata de la bodega: {self.nota_de_cata_bodega}\n"
+                f"◙ Precio: {self.precio}\n"
+                f"◙ Fecha de última actualización: {self.fecha_actualizacion}\n"
+                f"◙ Varietales:\n{varietales_str}\n"
+                f"◙ Maridajes:\n{maridajes_str}\n"
+                f"◙ Bodega: {self.bodega.nombre}\n\n")
