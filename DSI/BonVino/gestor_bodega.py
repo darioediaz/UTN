@@ -1,18 +1,26 @@
-from clases.bodegas import Bodega
+'''from clases.bodegas import Bodega
 from clases.maridaje import Maridaje
 from clases.tipo_uva import TipoUva
 from clases.vinos import Vino
 from pantalla_import_bodega import PantallaImportBodega
 from mocks.bodegas_mock import bodegas_mock
 from mocks.actualizaciones_mock import vinos_a_actualizar_mock
+from mocks.vinos_mock import *
 from mocks.vinos_mock import vinos_mock
 from mocks.vinos_mock import maridajes_mock
 from mocks.vinos_mock import varietales_mock
 from mocks.vinos_mock import tipos_uva_mock
-from mocks.enofilos_mock import enofilos_mock
+from mocks.enofilos_mock import enofilos_mock'''
 
+from clases.bodegas import *
+from clases.maridaje import *
+from clases.tipo_uva import *
+from clases.vinos import *
+from mocks.vinos_mock import *
+from mocks.actualizaciones_mock import *
+from pantalla_import_bodega import *
+from mocks.enofilos_mock import *
 import datetime
-
 
 class GestorImportBodega:
     def __init__(self):

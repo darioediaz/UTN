@@ -1,4 +1,4 @@
-from clases.varietal import Varietal
+from clases.varietal import *
 
 
 class Vino:

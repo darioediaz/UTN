@@ -1,5 +1,5 @@
-from pantalla_import_bodega import PantallaImportBodega
-from gestor_bodega import GestorImportBodega
+from pantalla_import_bodega import *
+from gestor_bodega import *
 
 
 def main():

@@ -1,4 +1,4 @@
-from gestor_bodega import GestorImportBodega
+from gestor_bodega import *
 
 
 class PantallaImportBodega:

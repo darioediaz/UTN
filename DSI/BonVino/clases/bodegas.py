@@ -1,4 +1,4 @@
-from clases.vinos import Vino
+from clases.vinos import *
 
 
 class Bodega:
