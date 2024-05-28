@@ -1,3 +1,5 @@
+from clases.varietal import Varietal
+
 class Vino:
     def __init__(self, nombre, añada, imagen, nota, precio, fecha_actualizacion, varietal, maridaje, bodega):
         self.nombre = nombre
@@ -29,14 +31,22 @@ class Vino:
     def set_fecha_actualizacion(vino_original, fecha):
         vino_original.fecha_actualizacion = fecha
 
+    def crear_varietal(varietales):
+        for varietal in varietales:
+            Varietal(varietal.descripcion, varietal.porcentaje_composicion, varietal.tipo_uva)
+
+
     def __str__(self):
-        maridajes = "\n".join([f"  - {maridaje.nombre}: {maridaje.descripcion}" for maridaje in self.maridaje])
+        varietales_str = "\n".join([f"  - {varietal.descripcion} ({varietal.porcentaje_composicion}%) - Tipo de uva: {varietal.tipo_uva.nombre}" for varietal in self.varietal])
+
+        maridajes_str = "\n".join([f"  - {maridaje.nombre}: {maridaje.descripcion}" for maridaje in self.maridaje])
+
         return (f"Nombre: {self.nombre}\n"
                 f"Añada: {self.añada}\n"
                 f"Imagen de la etiqueta: {self.imagen_etiqueta}\n"
                 f"Nota de cata de la bodega: {self.nota_de_cata_bodega}\n"
                 f"Precio: {self.precio}\n"
                 f"Fecha de última actualización: {self.fecha_actualizacion}\n"
-                f"Varietal: {self.varietal.descripcion} ({self.varietal.porcentaje_composicion}%) - Tipo de uva: {self.varietal.tipo_uva.nombre}\n"
-                f"Maridajes:\n{maridajes}\n"
+                f"Varietales:\n{varietales_str}\n"
+                f"Maridajes:\n{maridajes_str}\n"
                 f"Bodega: {self.bodega.nombre}")
