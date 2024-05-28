@@ -3,5 +3,3 @@ class Varietal:
         self.descripcion = descripcion
         self.porcentaje_composicion = porcentaje
         self.tipo_uva = tipo_uva
-        
-    
