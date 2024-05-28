@@ -4,6 +4,6 @@ class Siguiendo:
         self.fecha_fin = fecha_fin
         self.amigo = amigo
         self.bodega = bodega
-
+        
     def sos_de_bodega(self, bodega):
-        return self.bodega.nombre == bodega.nombre
+        return(self.bodega.nombre == bodega.nombre)

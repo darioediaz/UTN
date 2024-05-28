@@ -1,7 +1,5 @@
-from gestor_bodega import *
 
-
-class PantallaImportBodega:
+class PantallaImportBodega():
 
     def __init__(self, gestor):
         self.gestor = gestor
@@ -16,9 +14,7 @@ class PantallaImportBodega:
         for bodega in bodegas_a_actualizar:
             print(f"{i})-{bodega.nombre}\n")
             i = i + 1
-        seleccion = int(
-            input("Seleccione el número de la bodega que desea actualizar:")
-        )
+        seleccion = int(input("Seleccione el número de la bodega que desea actualizar:"))
         self.tomar_seleccion_bodega(bodegas_a_actualizar[seleccion - 1])
 
     def tomar_seleccion_bodega(self, bodega):
@@ -35,6 +31,8 @@ class PantallaImportBodega:
             print(vino)
             print("\n")
 
+
+from gestor_bodega import GestorImportBodega
 
 gestor = GestorImportBodega()
 pantalla = PantallaImportBodega(gestor)

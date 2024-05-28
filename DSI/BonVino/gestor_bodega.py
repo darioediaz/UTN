@@ -1,25 +1,16 @@
-'''from clases.bodegas import Bodega
+from clases.bodegas import Bodega
 from clases.maridaje import Maridaje
 from clases.tipo_uva import TipoUva
 from clases.vinos import Vino
 from pantalla_import_bodega import PantallaImportBodega
 from mocks.bodegas_mock import bodegas_mock
 from mocks.actualizaciones_mock import vinos_a_actualizar_mock
-from mocks.vinos_mock import *
 from mocks.vinos_mock import vinos_mock
 from mocks.vinos_mock import maridajes_mock
 from mocks.vinos_mock import varietales_mock
 from mocks.vinos_mock import tipos_uva_mock
-from mocks.enofilos_mock import enofilos_mock'''
+from mocks.enofilos_mock import enofilos_mock
 
-from clases.bodegas import *
-from clases.maridaje import *
-from clases.tipo_uva import *
-from clases.vinos import *
-from mocks.vinos_mock import *
-from mocks.actualizaciones_mock import *
-from pantalla_import_bodega import *
-from mocks.enofilos_mock import *
 import datetime
 
 class GestorImportBodega:
@@ -34,9 +25,10 @@ class GestorImportBodega:
         self.maridajes = maridajes_mock
         self.tipos_uva = tipos_uva_mock
         self.varietales = varietales_mock
+        
 
     def importar_actualizacion_vinos_bodega(self):
-        return self.buscar_bodega_para_actualizar()
+        return(self.buscar_bodega_para_actualizar())
 
     def buscar_bodega_para_actualizar(self):
         bodegas_a_actualizar: Bodega = []
@@ -45,73 +37,58 @@ class GestorImportBodega:
                 bodegas_a_actualizar.append(bodega)
         return bodegas_a_actualizar
 
+    
     def tomar_seleccion_bodega(self, bodega):
         self.obtener_actualizacion_vinos_bodega(bodega)
 
+
     def obtener_actualizacion_vinos_bodega(self, bodega):
-        actualizacion_vinos = self.bodega.obtener_actualizacion_vinos(
-            bodega, self.vinos_a_actualizar
-        )
+        actualizacion_vinos = self.bodega.obtener_actualizacion_vinos(bodega, self.vinos_a_actualizar)
         self.determinar_vinos_a_actualizar(bodega, actualizacion_vinos)
 
     def determinar_vinos_a_actualizar(self, bodega, actualizacion_vinos):
         vinos_a_actualizar = []
         vinos_a_crear = []
-        vinos_a_actualizar, vinos_a_crear = bodega.tenes_este_vino(
-            actualizacion_vinos, self.vinos
-        )
+        vinos_a_actualizar, vinos_a_crear = bodega.tenes_este_vino(actualizacion_vinos, self.vinos)
         self.actualizar_o_crear_vino(bodega, vinos_a_actualizar, vinos_a_crear)
 
     def actualizar_o_crear_vino(self, bodega, vinos_a_actualizar, vinos_a_crear):
         for vino in vinos_a_actualizar:
-            vinos_actualizados = self.actualizar_caracteristicas_vino_existente(
-                bodega, vino, self.vinos
-            )
+            vinos_actualizados = self.actualizar_caracteristicas_vino_existente(bodega, vino, self.vinos)
 
         for vino in vinos_a_crear:
             vinos_creados = self.crear_vino(bodega, vino)
-
+        
         if vinos_actualizados and vinos_creados:
-            PantallaImportBodega.mostrar_resumen_vinos_importados(
-                bodega, vinos_a_actualizar, vinos_a_crear
-            )
+            PantallaImportBodega.mostrar_resumen_vinos_importados(bodega, vinos_a_actualizar, vinos_a_crear)
             self.buscar_seguidores_bodega(bodega)
 
     def actualizar_caracteristicas_vino_existente(self, bodega, vino, vinos):
-        return bodega.actualizar_datos_vino(vino, vinos)
-
+        return(bodega.actualizar_datos_vino(vino, vinos))
+        
     def crear_vino(self, bodega, vino):
-        return self.buscar_maridaje(bodega, vino)
-
+        return(self.buscar_maridaje(bodega, vino))
+        
     def buscar_maridaje(self, bodega, vino):
         for maridaje in vino.maridaje:
-            if self.maridaje.sos_maridaje(maridaje, self.maridajes):
-                return self.buscar_tipo_uva(vino, bodega)
-
+            if(self.maridaje.sos_maridaje(maridaje, self.maridajes)):
+                return(self.buscar_tipo_uva(vino, bodega))
+                
     def buscar_tipo_uva(self, vino, bodega):
         for varietal in vino.varietal:
-            if not self.tipo_uva.sos_tipo_uva(varietal.tipo_uva, self.tipos_uva):
+            if(not self.tipo_uva.sos_tipo_uva(varietal.tipo_uva, self.tipos_uva)):
                 return "Tipo de uva inexistente"
-        return self.crear_vinos(vino, bodega)
-
+        return(self.crear_vinos(vino, bodega))
+    
     def crear_vinos(self, vino, bodega):
-        self.vino(
-            vino.nombre,
-            vino.añada,
-            vino.imagen_etiqueta,
-            vino.nota_de_cata_bodega,
-            vino.precio,
-            vino.fecha_actualizacion,
-            vino.varietal,
-            vino.maridaje,
-            vino.bodega,
-        )
+        self.vino(vino.nombre, vino.añada, vino.imagen_etiqueta, vino.nota_de_cata_bodega, vino.precio, vino.fecha_actualizacion, vino.varietal, vino.maridaje, vino.bodega)
         self.vino.crear_varietal(vino.varietal)
         bodega.set_fecha_ultima_actualizacion(datetime.datetime.now())
         return True
-
+    
     def buscar_seguidores_bodega(self, bodega):
         for enofilo in enofilos_mock:
             usuario = enofilo.seguis_a_bodega(bodega)
             if usuario != None:
                 print(f"Notificar cambio actualizacion de bodegas a usuario: {usuario}")
+        
