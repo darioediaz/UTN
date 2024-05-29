@@ -4,6 +4,7 @@ from clases.siguiendo import Siguiendo
 from mocks.vinos_mock import vinos_mock
 from mocks.bodegas_mock import bodegas_mock
 
+# mock de usuarios
 usuarios_mock = [
     Usuario("enrique_gonzalez", "password123", False),
     Usuario("carlo_rossi", "wineLover456", True),
@@ -12,12 +13,14 @@ usuarios_mock = [
     Usuario("isabella_martinez", "bestWine2024", False),
 ]
 
+# mock de seguidores
 siguiendo_mock = [
     Siguiendo("2024-05-01", None, [], bodegas_mock[6]),
     Siguiendo("2024-06-01", None, [], bodegas_mock[1]),
     Siguiendo("2024-07-01", None, [], bodegas_mock[7])
 ]
 
+# mock de enofilos
 enofilos_mock = [
     Enofilo("Enrique", "Gonzalez", "imagen1.jpg", usuarios_mock[0], [siguiendo_mock[1]], [vinos_mock[0]]),
     Enofilo("Carlo", "Rossi", "imagen2.jpg", usuarios_mock[1], [siguiendo_mock[0]], []),

@@ -73,7 +73,6 @@ maridajes_mock = [
     Maridaje("Postres", "Perfecto para acompañar con postres dulces."),
     Maridaje("Caza", "Ideal con carnes de caza."),
     Maridaje("Embutidos", "Acompaña bien con una selección de embutidos.")
-    
 ]
 
 # mock de vinos a actualizar o crear (para simular actualizaciones provenientes de las bodegas)
