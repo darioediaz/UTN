@@ -43,7 +43,7 @@ class PantallaImportBodega:
         # Obtener las bodegas a actualizar
         bodegas_a_actualizar = self.gestor.importar_actualizacion_vinos_bodega()
         for bodega in bodegas_a_actualizar:
-            self.lista_bodegas.insert(tk.END, f"└─ {bodega.nombre}")
+            self.lista_bodegas.insert(tk.END, f"►\t{bodega.nombre}")
 
         # Centrar la ventana en la pantalla
         window_width = 460
