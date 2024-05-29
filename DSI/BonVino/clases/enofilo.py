@@ -7,12 +7,14 @@ class Enofilo:
         self.seguido = seguido
         self.vino_favorito = vino
         
+    # funcion del metodo seguis_a_bodega
     def seguis_a_bodega(self, bodega):
         for seguido in self.seguido:
             if seguido.sos_de_bodega(bodega):
                 return(self.get_nombre_usuario())
             else:
                 continue
-
+    
+    # funcion del metodo get_nombre
     def get_nombre_usuario(self):
         return(self.usuario.get_nombre())

@@ -3,6 +3,7 @@ class TipoUva:
         self.nombre = nombre
         self.descripcion = descripcion
         
+    # funcion del metodo sos_tipo_uva
     def sos_tipo_uva(tipo_uva_seleccionada, tipos_uva):
         for tipo_uva in tipos_uva:
             if tipo_uva.nombre == tipo_uva_seleccionada.nombre:

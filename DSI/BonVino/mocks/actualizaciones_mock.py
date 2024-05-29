@@ -4,7 +4,7 @@ from clases.varietal import Varietal
 from clases.tipo_uva import TipoUva
 from mocks.bodegas_mock import bodegas_mock
 
-# Crear instancias de TipoUva
+# mock de tipos de uva
 tipos_uva_mock = [
     TipoUva("Malbec", "Uva tinta de origen francés, típica de Argentina."),
     TipoUva("Cabernet Sauvignon", "Una de las variedades de uva tinta más conocidas."),
@@ -28,7 +28,7 @@ tipos_uva_mock = [
     TipoUva("Cabernet Franc", "Uva tinta, utilizada en mezclas de Bordeaux y varietales en el Valle del Loira.")
 ]
 
-# Crear instancias de Varietal
+# mock de varietales
 varietales_mock = [
     Varietal("Varietal de Malbec, 100% Malbec", 100, tipos_uva_mock[0]),
     Varietal("Varietal de Cabernet Sauvignon, 100% Cabernet Sauvignon", 100, tipos_uva_mock[1]),
@@ -52,7 +52,7 @@ varietales_mock = [
     Varietal("Varietal de Cabernet Franc, 100% Cabernet Franc", 100, tipos_uva_mock[19])
 ]
 
-# Crear instancias de Maridaje
+# mock de maridajes
 maridajes_mock = [
     Maridaje("Carnes Rojas", "Ideal para acompañar con carnes rojas a la parrilla o asadas."),
     Maridaje("Quesos Curados", "Perfecto con una selección de quesos curados."),
@@ -76,6 +76,7 @@ maridajes_mock = [
     
 ]
 
+# mock de vinos a actualizar o crear (para simular actualizaciones provenientes de las bodegas)
 vinos_a_actualizar_mock = [
     Vino("Gran Reserva 2018", 2018, "granreserva2018.jpg", "NUEVAS notas de frutos rojos y especias", 2550.0, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[2]),
     Vino("Malbec Premium 2017", 2017, "malbecpremium2017.jpg", "Aromas a ciruela y roble", 3000.0, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[2]),

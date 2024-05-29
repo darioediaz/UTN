@@ -4,6 +4,7 @@ class Usuario:
         self.contraseña = contraseña
         self.premium = premium
         
+    # funcion del metodo get_nombre
     def get_nombre(self):
         return self.nombre
     

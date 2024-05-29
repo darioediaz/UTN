@@ -5,5 +5,6 @@ class Siguiendo:
         self.amigo = amigo
         self.bodega = bodega
         
+    # funcion del metodo sos_de_bodega
     def sos_de_bodega(self, bodega):
         return(self.bodega.nombre == bodega.nombre)

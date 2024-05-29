@@ -5,7 +5,7 @@ class Maridaje:
         self.nombre = nombre
         self.descripcion = descripcion
         
-        
+    # funcion del metodo sos_maridaje
     def sos_maridaje(maridaje_seleccionado, maridajes):
         for maridaje in maridajes:
             if maridaje.nombre == maridaje_seleccionado.nombre:
