@@ -2,7 +2,7 @@ from clases.bodegas import Bodega
 from clases.maridaje import Maridaje
 from clases.tipo_uva import TipoUva
 from clases.vinos import Vino
-from pantalla_import_bodega import PantallaImportBodega
+from clases.pantalla_import_bodega import PantallaImportBodega
 from mocks.bodegas_mock import *
 from mocks.actualizaciones_mock import *
 from mocks.vinos_mock import *
@@ -22,6 +22,7 @@ class GestorImportBodega:
         self.maridajes = maridajes_mock
         self.tipos_uva = tipos_uva_mock
         self.varietales = varietales_mock
+        self.bodegas_a_actualizar: Bodega = []
         
     # funcion del metodo importar_actualizacion_vinos_bodega
     def importar_actualizacion_vinos_bodega(self):
@@ -29,14 +30,16 @@ class GestorImportBodega:
     
     # funcion del metodo importar_actualizacion_vinos_bodega
     def buscar_bodega_para_actualizar(self):
-        bodegas_a_actualizar: Bodega = []
+        self.bodegas_a_actualizar = []
         for bodega in self.bodegas:
             if bodega.esta_para_actualizar_novedades_vino():
-                bodegas_a_actualizar.append(bodega)
-        return bodegas_a_actualizar
+                self.bodegas_a_actualizar.append(bodega)
+        return self.bodegas_a_actualizar
 
     # funcion del metodo tomar_seleccion_bodega    
-    def tomar_seleccion_bodega(self, bodega):
+    def tomar_seleccion_bodega(self, seleccion):
+        bodega = self.bodegas_a_actualizar[seleccion]
+        print(bodega.nombre)
         self.obtener_actualizacion_vinos_bodega(bodega)
 
     # funcion del metodo tomar_seleccion_bodega
