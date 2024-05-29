@@ -50,12 +50,12 @@ class PantallaImportBodega:
     def __init__(self, gestor):
         self.gestor = gestor
         self.ventana = tk.Tk()
-        self.ventana.title("Importación de Bodegas")
+        self.ventana.title("Importacion de Bodegas")
 
         self.frame_bodegas = tk.Frame(self.ventana)
         self.frame_bodegas.pack()
 
-        self.label_bodegas = tk.Label(self.frame_bodegas, text="Bodegas con actualizaciones pendientes:")
+        self.label_bodegas = tk.Label(self.frame_bodegas, text="Bodegas con actualizaciones pendientes")
         self.label_bodegas.pack()
 
         self.lista_bodegas = tk.Listbox(self.frame_bodegas)
@@ -102,15 +102,15 @@ class PantallaImportBodega:
 
     # funcion para el metodo mostrar_resumen_vinos_importados
     def mostrar_resumen_vinos_importados(bodega, vinos_actualizados, vinos_creados):
-        resumen = f"\nVinos ACTUALIZADOS para: {bodega.nombre}\n"
+        resumen = f"\n\tVinos ACTUALIZADOS para: {bodega.nombre}\nn◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙"
         for vino in vinos_actualizados:
             resumen += str(vino) + "\n"
-        resumen += f"\nVinos CREADOS para: {bodega.nombre}\n"
+        resumen += f"\n\tVinos CREADOS para: {bodega.nombre}\nn◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙"
         for vino in vinos_creados:
             resumen += str(vino) + "\n"
 
         resumen_ventana = tk.Toplevel()
-        resumen_ventana.title("Resumen")
+        resumen_ventana.title("Resumen de actualizaciones de bodegas")
 
         scroll_text = scrolledtext.ScrolledText(resumen_ventana, width=120, height=50)
         scroll_text.insert(tk.END, resumen)
