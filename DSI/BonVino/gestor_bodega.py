@@ -95,6 +95,8 @@ class GestorImportBodega:
     def buscar_seguidores_bodega(self, bodega):
         for enofilo in enofilos_mock:
             usuario = enofilo.seguis_a_bodega(bodega)
-            if usuario != None:
-                print(f"Notificar cambio actualizacion de bodegas a usuario: {usuario}")
+        if usuario != None:
+            print(f"Notificar cambio actualizacion de bodegas al usuario: {usuario}\n")
+        else:
+            print(f"La {bodega.nombre} no tiene seguidores a quien notificar\n")
         
