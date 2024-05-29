@@ -42,15 +42,15 @@ class Vino:
 
     # funcion para mostrar el toString de vinos y sus atributos 
     def __str__(self):
-        varietales_str = "\n".join([f"{varietal.descripcion} ({varietal.porcentaje_composicion}%) ◙ Tipo de uva: {varietal.tipo_uva.nombre}" for varietal in self.varietal])
+        varietales_str = "\n".join([f"{varietal.descripcion} ({varietal.porcentaje_composicion}%)\n🍷 Tipo de uva: {varietal.tipo_uva.nombre}" for varietal in self.varietal])
         maridajes_str = "\n".join([f"{maridaje.nombre}: {maridaje.descripcion}" for maridaje in self.maridaje])
 
-        return (f"\n◙ Nombre: {self.nombre}\n"
-                f"◙ Añada: {self.añada}\n"
-                f"◙ Imagen de la etiqueta: {self.imagen_etiqueta}\n"
-                f"◙ Nota de cata de la bodega: {self.nota_de_cata_bodega}\n"
-                f"◙ Precio: {self.precio}\n"
-                f"◙ Fecha de última actualización: {self.fecha_actualizacion}\n"
-                f"◙ Varietales: {varietales_str}\n"
-                f"◙ Maridajes: {maridajes_str}\n"
-                f"◙ Bodega: {self.bodega.nombre}\n")
+        return (f"\n🍷 Nombre: {self.nombre}\n"
+                f"🍷 Añada: {self.añada}\n"
+                f"🍷 Imagen de la etiqueta: {self.imagen_etiqueta}\n"
+                f"🍷 Nota de cata de la bodega: {self.nota_de_cata_bodega}\n"
+                f"🍷 Precio: {self.precio}\n"
+                f"🍷 Fecha de última actualización: {self.fecha_actualizacion}\n"
+                f"🍷 Varietales: {varietales_str}\n"
+                f"🍷 Maridajes: {maridajes_str}\n"
+                f"🍷 Bodega: {self.bodega.nombre}\n")

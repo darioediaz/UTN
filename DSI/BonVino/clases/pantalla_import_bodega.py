@@ -50,34 +50,33 @@ class PantallaImportBodega:
     def __init__(self, gestor):
         self.gestor = gestor
         self.ventana = tk.Tk()
-        self.ventana.title("Importacion de Bodegas")
+        self.ventana.title("Importación de Bodegas")
 
-        self.frame_bodegas = tk.Frame(self.ventana)
+        # Configuración del marco principal
+        self.frame_bodegas = tk.Frame(self.ventana, padx=20, pady=20)
         self.frame_bodegas.pack()
 
-        self.label_bodegas = tk.Label(self.frame_bodegas, text="Bodegas con actualizaciones pendientes")
-        self.label_bodegas.pack()
+        # Etiqueta de título
+        self.label_bodegas = tk.Label(self.frame_bodegas, text="Bodegas con actualizaciones pendientes", font=("Arial", 14, "bold"))
+        self.label_bodegas.grid(row=0, column=0, columnspan=2, pady=10)
 
-        self.lista_bodegas = tk.Listbox(self.frame_bodegas)
-        self.lista_bodegas.pack()
+        # Lista de bodegas
+        self.lista_bodegas = tk.Listbox(self.frame_bodegas, width=30, height=10, font=("Arial", 12))
+        self.lista_bodegas.grid(row=1, column=0, columnspan=2, padx=10, pady=10)
 
-        self.boton_actualizar = tk.Button(self.frame_bodegas, text="Actualizar", command=self.actualizar_bodega)
-        self.boton_actualizar.pack()
+        # Botón de actualizar
+        self.boton_actualizar = tk.Button(self.frame_bodegas, text="Actualizar", command=self.actualizar_bodega, font=("Arial", 12))
+        self.boton_actualizar.grid(row=2, column=0, columnspan=2, pady=10)
 
-    # funcion para el metodo habilitar_ventana
     def habilitar_ventana(self):
+        # Obtener las bodegas a actualizar
         bodegas_a_actualizar = self.gestor.importar_actualizacion_vinos_bodega()
         for bodega in bodegas_a_actualizar:
             self.lista_bodegas.insert(tk.END, bodega.nombre)
-        
-        # Tamaño del textarea de la lista de bodegas a actualizar 
-        listbox_width = 30
-        listbox_height = 10
-        self.lista_bodegas.config(width=listbox_width, height=listbox_height)
 
-        # Tamaño de la ventana
-        window_width = 250
-        window_height = 250
+        # Centrar la ventana en la pantalla
+        window_width = 420
+        window_height = 420
         screen_width = self.ventana.winfo_screenwidth()
         screen_height = self.ventana.winfo_screenheight()
         x = (screen_width // 2) - (window_width // 2)
@@ -86,8 +85,8 @@ class PantallaImportBodega:
 
         self.ventana.mainloop()
 
-    # funcion para el metodo solicitar_seleccion_bodegas
     def actualizar_bodega(self):
+        # Obtener la bodega seleccionada
         seleccion = self.lista_bodegas.curselection()
         if not seleccion:
             messagebox.showinfo("Error", "Debe seleccionar una bodega.")
@@ -95,26 +94,33 @@ class PantallaImportBodega:
             bodega_seleccionada = seleccion[0]
             self.tomar_seleccion_bodega(bodega_seleccionada)
 
-
-    # funcion para el metodo tomar_seleccion_bodegas
     def tomar_seleccion_bodega(self, bodega):
         self.gestor.tomar_seleccion_bodega(bodega)
 
-    # funcion para el metodo mostrar_resumen_vinos_importados
+    @staticmethod
     def mostrar_resumen_vinos_importados(bodega, vinos_actualizados, vinos_creados):
-        resumen = f"\n\tVinos ACTUALIZADOS para: {bodega.nombre}\nn◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙"
-        for vino in vinos_actualizados:
-            resumen += str(vino) + "\n"
-        resumen += f"\n\tVinos CREADOS para: {bodega.nombre}\nn◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙◙"
-        for vino in vinos_creados:
-            resumen += str(vino) + "\n"
+        # titulos para la ventana de resumen
+        titulo_vinos_actualizados = f"Vinos ACTUALIZADOS para: {bodega.nombre}"
+        titulo_vinos_creados = f"Vinos CREADOS para: {bodega.nombre}"
+        
+        # Crear el texto del resumen
+        resumen = titulo_vinos_actualizados + "\n"
+        for idx, vino in enumerate(vinos_actualizados, start=1):
+            resumen += f"{idx}. {vino}\n"
+            
+        resumen += titulo_vinos_creados + "\n"
+        for idx, vino in enumerate(vinos_creados, start=1):
+            resumen += f"{idx}. {vino}\n"
 
+        # Crear la ventana de resumen
         resumen_ventana = tk.Toplevel()
         resumen_ventana.title("Resumen de actualizaciones de bodegas")
 
-        scroll_text = scrolledtext.ScrolledText(resumen_ventana, width=120, height=50)
+        # Texto de desplazamiento
+        scroll_text = scrolledtext.ScrolledText(resumen_ventana, width=80, height=20, font=("Arial", 12))
         scroll_text.insert(tk.END, resumen)
-        scroll_text.pack()
+        scroll_text.pack(padx=10, pady=10)
 
         resumen_ventana.mainloop()
+
 
