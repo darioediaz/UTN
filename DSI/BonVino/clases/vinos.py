@@ -11,6 +11,59 @@ class Vino:
         self.varietal = varietal
         self.maridaje = maridaje
         self.bodega = bodega
+        
+    # setters
+    def set_nombre(self, nombre):
+        self.nombre = nombre
+        
+    def set_añada(self, añada):
+        self.añada = añada
+        
+    def set_imagen_etiqueta(self, imagen_etiqueta):
+        self.imagen_etiqueta = imagen_etiqueta
+        
+    def set_nota_cata_bodega(self, nota_de_cata_bodega):
+        self.nota_de_cata_bodega = nota_de_cata_bodega
+        
+    def set_precio(self, precio):
+        self.precio = precio
+        
+    def set_fecha_actualizacion(self, fecha_actualizacion):
+        self.fecha_actualizacion = fecha_actualizacion
+    
+    def set_varietal(self, varietal):
+        self.varietal = varietal
+        
+    def set_maridaje(self, maridaje):
+        self.maridaje = maridaje
+        
+    def set_bodega(self, bodega):
+        self.bodega = bodega
+        
+    # getters
+    def get_nombre(self):
+        return self.nombre
+    
+    def get_añada(self):
+        return self.añada
+    
+    def get_imagen_etiqueta(self):
+        return self.imagen_etiqueta
+    
+    def get_nota_cata_bodega(self):
+        return self.nota_de_cata_bodega
+    
+    def get_precio(self):
+        return self.precio
+      
+    def get_varietal(self):
+        return self.varietal
+
+    def get_maridaje(self):
+        return self.maridaje
+
+    def get_bodega(self):
+        return self.bodega
 
     # funcion del metodo sos_este_vino
     def sos_este_vino(vino_a_actualizar, vinos_de_bodega):

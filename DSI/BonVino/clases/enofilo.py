@@ -7,6 +7,44 @@ class Enofilo:
         self.seguido = seguido
         self.vino_favorito = vino
         
+    # setters
+    def set_nombre(self, nombre):  
+        self.nombre = nombre
+    
+    def set_apellido(self, apellido):
+        self.apellido = apellido
+        
+    def set_imagen_perfil(self, imagen_perfil):
+        self.imagen_perfil = imagen_perfil
+        
+    def set_vino_favorito(self, vino):
+        self.vino_favorito = vino
+        
+    def set_usuario(self, usuario):
+        self.usuario = usuario
+        
+    def set_seguido(self, seguido):
+        self.seguido = seguido
+    
+    # getters     
+    def conocer_nombre(self):
+        return self.nombre
+    
+    def conocer_apellido(self):
+        return self.apellido
+    
+    def conocer_imagen_perfil(self):
+        return self.imagen_perfil
+    
+    def conocer_vino_favorito(self):
+        return self.vino_favorito
+    
+    def conocer_seguido(self):
+        return self.seguido 
+    
+    def conocer_usuario(self):
+        return self.usuario 
+    
     # funcion del metodo seguis_a_bodega
     def seguis_a_bodega(self, bodega):
         for seguido in self.seguido:

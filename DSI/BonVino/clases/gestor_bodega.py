@@ -56,16 +56,19 @@ class GestorImportBodega:
 
     # funcion del metodo tomar_seleccion_bodega
     def actualizar_o_crear_vino(self, bodega, vinos_a_actualizar, vinos_a_crear):
-        for vino in vinos_a_actualizar:
-            vinos_actualizados = self.actualizar_caracteristicas_vino_existente(bodega, vino, self.vinos)
+        try:
+            for vino in vinos_a_actualizar:
+                vinos_actualizados = self.actualizar_caracteristicas_vino_existente(bodega, vino, self.vinos)
 
-        for vino in vinos_a_crear:
-            vinos_creados = self.crear_vino(bodega, vino)
-        
-        if vinos_actualizados and vinos_creados:
-            PantallaImportBodega.mostrar_resumen_vinos_importados(bodega, vinos_a_actualizar, vinos_a_crear)
-            self.buscar_seguidores_bodega(bodega)
-
+            for vino in vinos_a_crear:
+                vinos_creados = self.crear_vino(bodega, vino)
+            
+            if vinos_actualizados and vinos_creados:
+                PantallaImportBodega.mostrar_resumen_vinos_importados(bodega, vinos_a_actualizar, vinos_a_crear)
+                self.buscar_seguidores_bodega(bodega)
+        except Exception as e:
+            raise(e)
+            
     # funcion del metodo tomar_seleccion_bodega
     def actualizar_caracteristicas_vino_existente(self, bodega, vino, vinos):
         return(bodega.actualizar_datos_vino(vino, vinos))

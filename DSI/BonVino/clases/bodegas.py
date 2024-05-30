@@ -9,6 +9,50 @@ class Bodega:
         self.actualizaciones_disponibles = tiene_actualizacion
         self.periodo_actualizacion = periodo_actualizacion
         self.fecha_ultima_actualizacion = fecha_ultima_actualizacion
+    
+    # setters
+    def set_nombre(self, nombre):
+        self.nombre = nombre
+        
+    def set_ubicacion(self, ubicacion):
+        self.ubicacion = ubicacion
+        
+    def set_descripcion(self, descripcion):
+        self.descripcion = descripcion
+        
+    def set_historia(self, historia):
+        self.historia = historia
+        
+    def set_actualizaciones_disponibles(self, tiene_actualizacion):
+        self.actualizaciones_disponibles = tiene_actualizacion
+        
+    def set_periodo_actualizacion(self, periodo_actualizacion):
+        self.periodo_actualizacion = periodo_actualizacion
+        
+    def set_fecha_ultima_actualizacion(self, fecha_ultima_actualizacion):
+        self.fecha_ultima_actualizacion = fecha_ultima_actualizacion
+    
+    # getters
+    def conocer_nombre(self):
+        return self.nombre
+    
+    def conocer_ubicacion(self):
+        return self.ubicacion
+    
+    def conocer_descripcion(self):
+        return self.descripcion
+    
+    def conocer_historia(self):
+        return self.historia
+    
+    def conocer_actualizaciones_disponibles(self):
+        return self.actualizaciones_disponibles
+    
+    def conocer_periodo_actualizacion(self):
+        return self.periodo_actualizacion
+    
+    def conocer_fecha_ultima_actualizacion(self):
+        return self.fecha_ultima_actualizacion
 
     # funcion para el metodo esta_para_actualizar_novedades_vino
     def esta_para_actualizar_novedades_vino(self):

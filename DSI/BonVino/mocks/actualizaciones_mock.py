@@ -44,7 +44,7 @@ varietales_mock = [
     Varietal("Varietal de Carmenere, 100% Carmenere", 100, tipos_uva_mock[11]),
     Varietal("Varietal de Viognier, 100% Viognier", 100, tipos_uva_mock[12]),
     Varietal("Varietal de Albariño, 100% Albariño", 100, tipos_uva_mock[13]),
-    Varietal("Varietal de Sangiovese, 100% Sangiovese", 100, tipos_uva_mock[14]),
+    Varietal("Varietal de Sangiovese, 100% Sangiovese", 100, tipos_uva_mock[13]),
     Varietal("Varietal de Barbera, 100% Barbera", 100, tipos_uva_mock[15]),
     Varietal("Varietal de Moscato, 100% Moscato", 100, tipos_uva_mock[16]),
     Varietal("Varietal de Nebbiolo, 100% Nebbiolo", 100, tipos_uva_mock[17]),
@@ -99,8 +99,8 @@ vinos_a_actualizar_mock = [
     Vino("Rioja Alta 2017", 2017, "riojaalta2017.jpg", "Aromas a ciruela y roble", 3025.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
     Vino("NUEVO Carmenere 2019", 2019, "carmenere2019.jpg", "Cuerpo robusto y taninos suaves", 4525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
     Vino("Amarone Classico 2016", 2016, "amaroneclassico2016.jpg", "NUEVAS notas de vainilla y chocolate", 5025.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
-    Vino("Pinot Grigio 2020", 2020, "pinotgrigio2020.jpg", "Aromas florales y cítricos", 3525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[14]),
-    Vino("Old Vine Zinfandel 2015", 2015, "oldvinezinfandel2015.jpg", "Especiado con final largo", 6025.50, "2024-05-26", [varietales_mock[1]], [], bodegas_mock[14]),
-    Vino("Cabernet Franc 2018", 2018, "cabernetfranc2018.jpg", "NUEVAS notas de frutas maduras", 4025.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[14]),
-    Vino("NUEVO Petite Sirah 2017", 2017, "petitesirah2017.jpg", "NUEVAS notas de mora y regaliz", 5525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[14])
+    Vino("Pinot Grigio 2020", 2020, "pinotgrigio2020.jpg", "Aromas florales y cítricos", 3525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
+    Vino("Old Vine Zinfandel 2015", 2015, "oldvinezinfandel2015.jpg", "Especiado con final largo", 6025.50, "2024-05-26", [varietales_mock[1]], [], bodegas_mock[13]),
+    Vino("Cabernet Franc 2018", 2018, "cabernetfranc2018.jpg", "NUEVAS notas de frutas maduras", 4025.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
+    Vino("NUEVO Petite Sirah 2017", 2017, "petitesirah2017.jpg", "NUEVAS notas de mora y regaliz", 5525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13])
 ]

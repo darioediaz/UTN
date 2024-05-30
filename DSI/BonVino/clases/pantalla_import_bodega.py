@@ -38,8 +38,26 @@ class PantallaImportBodega:
 
         self.boton_actualizar = ttk.Button(self.frame_bodegas, text="Actualizar", command=self.actualizar_bodega)
         self.boton_actualizar.grid(row=3, column=0, columnspan=2)
+    
+    # funcion del metodo op_importar_a_actualizacion_vinos_bodega
+    def op_importar_a_actualizacion_vinos_bodega(self):
+        self.habilitar_ventana()
 
+    # funcion del metodo habilitar_ventana
     def habilitar_ventana(self):
+        self.solicitar_seleccionar_bodega()
+        
+    # funcion del metodo actualizar_bodega
+    def actualizar_bodega(self):
+        # Obtener la bodega seleccionada
+        seleccion = self.lista_bodegas.curselection()
+        if not seleccion:
+            messagebox.showinfo("Error", "Debe seleccionar una bodega.")
+        else:
+            bodega_seleccionada = seleccion[0]
+            self.tomar_seleccion_bodega(bodega_seleccionada)
+    
+    def solicitar_seleccionar_bodega(self):
         # Obtener las bodegas a actualizar
         bodegas_a_actualizar = self.gestor.importar_actualizacion_vinos_bodega()
         for bodega in bodegas_a_actualizar:
@@ -55,19 +73,15 @@ class PantallaImportBodega:
         self.ventana.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
         self.ventana.mainloop()
-
-    def actualizar_bodega(self):
-        # Obtener la bodega seleccionada
-        seleccion = self.lista_bodegas.curselection()
-        if not seleccion:
-            messagebox.showinfo("Error", "Debe seleccionar una bodega.")
-        else:
-            bodega_seleccionada = seleccion[0]
-            self.tomar_seleccion_bodega(bodega_seleccionada)
-
+            
+    # funcion del metodo tomar_seleccion_bodega
     def tomar_seleccion_bodega(self, bodega):
-        self.gestor.tomar_seleccion_bodega(bodega)
+        try:
+            self.gestor.tomar_seleccion_bodega(bodega)
+        except Exception as e:
+            messagebox.showerror("Error", f"Bodega no responde")
 
+    # funcion del metodo mostrar_resumen_vinos_importados
     @staticmethod
     def mostrar_resumen_vinos_importados(bodega, vinos_actualizados, vinos_creados):
         # titulos de resumen
