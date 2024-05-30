@@ -60,6 +60,11 @@ class PantallaImportBodega:
     def solicitar_seleccionar_bodega(self):
         # Obtener las bodegas a actualizar
         bodegas_a_actualizar = self.gestor.importar_actualizacion_vinos_bodega()
+        
+        # Alternativa <Sin bodegas a actualizar>
+        if len(bodegas_a_actualizar) == 0:
+            messagebox.showinfo("Error", "No hay bodegas con actualizaciones pendientes.")
+            
         for bodega in bodegas_a_actualizar:
             self.lista_bodegas.insert(tk.END, f"►\t{bodega.nombre}")
 

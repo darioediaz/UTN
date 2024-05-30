@@ -100,6 +100,7 @@ vinos_a_actualizar_mock = [
     Vino("NUEVO Carmenere 2019", 2019, "carmenere2019.jpg", "Cuerpo robusto y taninos suaves", 4525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
     Vino("Amarone Classico 2016", 2016, "amaroneclassico2016.jpg", "NUEVAS notas de vainilla y chocolate", 5025.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
     Vino("Pinot Grigio 2020", 2020, "pinotgrigio2020.jpg", "Aromas florales y cítricos", 3525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
+    # ALTERNATIVA a3: <sistema externo de bodega no da respuesta>
     Vino("Old Vine Zinfandel 2015", 2015, "oldvinezinfandel2015.jpg", "Especiado con final largo", 6025.50, "2024-05-26", [varietales_mock[1]], [], bodegas_mock[13]),
     Vino("Cabernet Franc 2018", 2018, "cabernetfranc2018.jpg", "NUEVAS notas de frutas maduras", 4025.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13]),
     Vino("NUEVO Petite Sirah 2017", 2017, "petitesirah2017.jpg", "NUEVAS notas de mora y regaliz", 5525.50, "2024-05-26", [varietales_mock[1]], [maridajes_mock[0]], bodegas_mock[13])
