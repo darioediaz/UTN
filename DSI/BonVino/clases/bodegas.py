@@ -33,25 +33,25 @@ class Bodega:
         self.fecha_ultima_actualizacion = fecha_ultima_actualizacion
     
     # getters
-    def conocer_nombre(self):
+    def get_nombre(self):
         return self.nombre
     
-    def conocer_ubicacion(self):
+    def get_ubicacion(self):
         return self.ubicacion
     
-    def conocer_descripcion(self):
+    def get_descripcion(self):
         return self.descripcion
     
-    def conocer_historia(self):
+    def get_historia(self):
         return self.historia
     
-    def conocer_actualizaciones_disponibles(self):
+    def get_actualizaciones_disponibles(self):
         return self.actualizaciones_disponibles
     
-    def conocer_periodo_actualizacion(self):
+    def get_periodo_actualizacion(self):
         return self.periodo_actualizacion
     
-    def conocer_fecha_ultima_actualizacion(self):
+    def get_fecha_ultima_actualizacion(self):
         return self.fecha_ultima_actualizacion
 
     # funcion para el metodo esta_para_actualizar_novedades_vino

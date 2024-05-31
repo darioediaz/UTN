@@ -27,22 +27,22 @@ class Enofilo:
         self.seguido = seguido
     
     # getters     
-    def conocer_nombre(self):
+    def get_nombre(self):
         return self.nombre
     
-    def conocer_apellido(self):
+    def get_apellido(self):
         return self.apellido
     
-    def conocer_imagen_perfil(self):
+    def get_imagen_perfil(self):
         return self.imagen_perfil
     
-    def conocer_vino_favorito(self):
+    def get_vino_favorito(self):
         return self.vino_favorito
     
-    def conocer_seguido(self):
+    def get_seguido(self):
         return self.seguido 
     
-    def conocer_usuario(self):
+    def get_usuario(self):
         return self.usuario 
     
     # funcion del metodo seguis_a_bodega

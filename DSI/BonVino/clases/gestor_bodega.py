@@ -24,6 +24,68 @@ class GestorImportBodega:
         self.varietales = varietales_mock
         self.bodegas_a_actualizar: Bodega = []
         
+    # setters
+    def set_bodega(self, bodega):
+        self.bodega = bodega
+        
+    def set_maridaje(self, maridaje):
+        self.maridaje = maridaje
+        
+    def set_tipos_uva(self, tipos_uva):
+        self.tipos_uva = tipos_uva
+        
+    def set_bodegas(self, bodegas):
+        self.bodegas = bodegas
+        
+    def set_vinos_a_actualizar(self, vinos_a_actualizar):
+        self.vinos_a_actualizar = vinos_a_actualizar
+        
+    def set_vinos(self, vinos):
+        self.vinos = vinos
+        
+    def set_maridajes(self, maridajes):
+        self.maridajes = maridajes
+        
+    def set_tipos_uva(self, tipos_uva):
+        self.tipo_uva = tipos_uva
+        
+    def set_varietales(self, varietales):
+        self.varietales = varietales                
+            
+    def set_bodegas_a_actualizar(self, bodegas_a_actualizar):
+        self.bodegas_a_actualizar = bodegas_a_actualizar
+        
+    # getters
+    def get_bodega(self, bodega):
+        return(self.bodega)
+        
+    def get_maridaje(self, maridaje):
+        return(self.maridaje)
+        
+    def get_tipos_uva(self, tipos_uva):
+        return(self.tipos_uva)
+        
+    def get_bodegas(self, bodegas):
+        return(self.bodegas)
+        
+    def get_vinos_a_actualizar(self, vinos_a_actualizar):
+        return(self.vinos_a_actualizar)
+        
+    def get_vinos(self, vinos):
+        return(self.vinos)
+        
+    def get_maridajes(self, maridajes):
+        return(self.maridajes)
+        
+    def get_tipos_uva(self, tipos_uva):
+        return(self.tipos_uva)
+        
+    def get_varietales(self, varietales):
+        return(self.varietales)             
+            
+    def get_bodegas_a_actualizar(self, bodegas_a_actualizar):
+        return(self.bodegas_a_actualizar)
+        
     # funcion del metodo importar_actualizacion_vinos_bodega
     def importar_actualizacion_vinos_bodega(self):
         return(self.buscar_bodega_para_actualizar())

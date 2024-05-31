@@ -61,7 +61,7 @@ class PantallaImportBodega:
         # Obtener las bodegas a actualizar
         bodegas_a_actualizar = self.gestor.importar_actualizacion_vinos_bodega()
         
-        # Alternativa <Sin bodegas a actualizar>
+        # mensaje para la alternativa A1: <NO HAY BODEGAS CON ACTUALIZACIONES DISPONIBLES>
         if len(bodegas_a_actualizar) == 0:
             messagebox.showinfo("Error", "No hay bodegas con actualizaciones pendientes.")
             
@@ -84,7 +84,8 @@ class PantallaImportBodega:
         try:
             self.gestor.tomar_seleccion_bodega(bodega)
         except Exception as e:
-            messagebox.showerror("Error", f"Bodega no responde")
+            # mensaje para la alternativa A3: <EL SISTEMA EXTERNO DE BODEGAS NO RESPONDE>
+            messagebox.showerror("Error", f"El sistema externo para la {bodega} no responde.")
 
     # funcion del metodo mostrar_resumen_vinos_importados
     @staticmethod

@@ -15,13 +15,13 @@ class Varietal:
         self.tipo_uva = nueva_uva
 
     # getters
-    def conocer_tipo_uva(self):
+    def get_tipo_uva(self):
         return self.tipo_uva
     
-    def conocer_porcentaje_composicion(self):
+    def get_porcentaje_composicion(self):
         return self.porcentaje_composicion
     
-    def conocer_descripcion(self):
+    def get_descripcion(self):
         return self.descripcion
     
     # funcion del metodo es_de_tipo_uva

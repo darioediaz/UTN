@@ -1,5 +1,6 @@
 from clases.bodegas import Bodega
 
+'''DESHABILITAR para la alternativa A1: <NO HAY BODEGAS CON ACTUALIZACIONES DISPONIBLES>'''
  # mock de bodegas
 bodegas_mock = [
     Bodega("Bodega El Centenario", "La Rioja, Argentina", "Bodega con tradición centenaria.", "Fundada en 1890, ha pasado por varias generaciones familiares.", False, 12, "2024-01-01"),
@@ -19,7 +20,7 @@ bodegas_mock = [
     Bodega("Bodega Terroir Innovación", "Valle de Uco, Argentina", "Bodega moderna con enfoque en terroir.", "Desde 2005, ha innovado en la producción de vinos de alta calidad.", True, 9, "2024-03-15"),
 ]
 
-# alternativa A1: <bodegas sin acualizar>
+'''HABILITAR para la alternativa A1: <NO HAY BODEGAS CON ACTUALIZACIONES DISPONIBLES>'''
 #  # mock de bodegas para prueba de sin actualizacion
 # bodegas_mock = [
 #     Bodega("Bodega El Centenario", "La Rioja, Argentina", "Bodega con tradición centenaria.", "Fundada en 1890, ha pasado por varias generaciones familiares.", False, 12, "2024-01-01"),
