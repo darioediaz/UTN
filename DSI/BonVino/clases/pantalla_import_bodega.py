@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import scrolledtext
 from tkinter import ttk
+from turtle import window_height, window_width
 
 class PantallaImportBodega:
     def __init__(self, gestor):
@@ -85,7 +86,7 @@ class PantallaImportBodega:
             self.gestor.tomar_seleccion_bodega(bodega)
         except Exception as e:
             # mensaje para la alternativa A3: <EL SISTEMA EXTERNO DE BODEGAS NO RESPONDE>
-            messagebox.showerror("Error", f"El sistema externo para la {bodega} no responde.")
+            messagebox.showerror("Error", f"El sistema externo para la bodega seleccionada no responde.")
 
     # funcion del metodo mostrar_resumen_vinos_importados
     @staticmethod
@@ -112,8 +113,8 @@ class PantallaImportBodega:
         scroll_text.insert(tk.END, resumen_creados, "negrita")
         for idx, vino in enumerate(vinos_creados, start=1):
             scroll_text.insert(tk.END, f"{idx}. {vino}\n")
-
-        # Cconfiguracion de etiquetas
+            
+                # Cconfiguracion de etiquetas
         scroll_text.tag_configure("negrita", font=("Arial", 12, "bold"))
-
+        
         resumen_ventana.mainloop()
