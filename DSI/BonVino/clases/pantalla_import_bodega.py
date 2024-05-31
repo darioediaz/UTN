@@ -40,6 +40,62 @@ class PantallaImportBodega:
         self.boton_actualizar = ttk.Button(self.frame_bodegas, text="Actualizar", command=self.actualizar_bodega)
         self.boton_actualizar.grid(row=3, column=0, columnspan=2)
     
+    # setters
+    def set_gestor(self, gestor):
+        self.gestor = gestor
+        
+    def set_ventana(self, ventana):
+        self.ventana = ventana
+        
+    def set_frame_bodegas(self, frame_bodegas):
+        self.frame_bodegas = frame_bodegas
+        
+    def set_label_titulo(self, label_titulo):
+        self.label_titulo = label_titulo
+        
+    def set_label_subtitulo(self, label_subtitulo):
+        self.label_subtitulo = label_subtitulo
+    
+    def set_lista_bodegas(self, lista_bodegas):
+        self.lista_bodegas = lista_bodegas
+        
+    def set_lista_bodegas_scroll(self, lista_bodegas_scroll):
+        self.lista_bodegas_scroll = lista_bodegas_scroll
+        
+    def set_lista_bodegas_frame(self, lista_bodegas_frame):
+        self.lista_bodegas_frame = lista_bodegas_frame
+        
+    def set_boton_actualizar(self, boton_actualizar):
+        self.boton_actualizar = boton_actualizar    
+        
+    # getters
+    def get_gestor(self):
+        return self.gestor
+    
+    def get_ventana(self):
+        return self.ventana   
+    
+    def get_frame_bodegas(self, frame_bodegas):
+        return self.frame_bodegas
+        
+    def get_label_titulo(self, label_titulo):
+        return self.label_titulo
+        
+    def get_label_subtitulo(self, label_subtitulo):
+        return self.label_subtitulo
+    
+    def get_lista_bodegas(self, lista_bodegas):
+        return self.lista_bodegas
+        
+    def get_lista_bodegas_scroll(self, lista_bodegas_scroll):
+        return self.lista_bodegas_scroll
+        
+    def get_lista_bodegas_frame(self, lista_bodegas_frame):
+        return self.lista_bodegas_frame
+        
+    def get_boton_actualizar(self, boton_actualizar):
+        return self.boton_actualizar
+            
     # funcion del metodo op_importar_a_actualizacion_vinos_bodega
     def op_importar_a_actualizacion_vinos_bodega(self):
         self.habilitar_ventana()
