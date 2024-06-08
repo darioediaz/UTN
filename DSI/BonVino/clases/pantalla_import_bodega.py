@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import scrolledtext
 from tkinter import ttk
-from turtle import window_height, window_width
 
 class PantallaImportBodega:
     def __init__(self, gestor):
