@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import AuthService from "../services/auth.service";
+
 
 function Menu() {
   const [usuarioLogueado, setUsuarioLogueado] = useState(
     AuthService.getUsuarioLogueado()
   );
 
+
   function CambioUsuarioLogueado(_usuarioLogueado) {
     setUsuarioLogueado(_usuarioLogueado);
   }
+
 
   useEffect(() => {
     AuthService.subscribeUsuarioLogueado(CambioUsuarioLogueado);
     return () => {
       AuthService.subscribeUsuarioLogueado(null);
-    };
+    }
   }, []);
+
 
   return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-md">
@@ -54,21 +58,12 @@ function Menu() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                className="nav-link"
-                title="exclusivo para administradores"
-                to="/articulosjwt"
-              >
+              <NavLink className="nav-link" title="exclusivo para administradores" to="/articulosjwt">
                 Articulos JWT
               </NavLink>
             </li>
-            {/* Agregar enlace a la sección de empleados */}
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/empleados">
-                Empleados
-              </NavLink>
-            </li>
-            {/* Fin del nuevo elemento de menú */}
+
+
             <li className="nav-item dropdown bg-dark">
               <a
                 className="nav-link dropdown-toggle"
@@ -103,35 +98,35 @@ function Menu() {
             </li>
           </ul>
 
-          <ul className="navbar-nav ms-auto">
-            {usuarioLogueado && (
+
+            <ul className="navbar-nav ms-auto">
+              {usuarioLogueado && (
+                <li className="nav-item">
+                  <a className="nav-link" href="#!">Bienvenido: {usuarioLogueado}</a>
+                </li>
+              )}
               <li className="nav-item">
-                <a className="nav-link" href="#!">
-                  Bienvenido: {usuarioLogueado}
-                </a>
-              </li>
-            )}
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/login/Inicio">
-                <span
-                  className={
-                    usuarioLogueado ? "text-warning" : "text-success"
-                  }
-                >
-                  <i
+                <NavLink className="nav-link" to="/login/Inicio">
+                  <span
                     className={
-                      usuarioLogueado ? "fa fa-sign-out" : "fa fa-sign-in"
+                      usuarioLogueado ? "text-warning" : "text-success"
                     }
-                  ></i>
-                </span>
-                {usuarioLogueado ? " Logout" : " Login"}
-              </NavLink>
-            </li>
-          </ul>
+                  >
+                    <i
+                      className={
+                        usuarioLogueado ? "fa fa-sign-out" : "fa fa-sign-in"
+                      }
+                    ></i>
+                  </span>
+                  {usuarioLogueado ? " Logout" : " Login"}
+                </NavLink>
+              </li>
+            </ul>
         </div>
       </div>
     </nav>
   );
 }
 
-export { Menu };
+
+export {Menu};
