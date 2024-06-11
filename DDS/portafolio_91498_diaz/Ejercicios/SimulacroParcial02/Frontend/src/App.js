@@ -9,8 +9,7 @@ import { ModalDialog } from "./components/ModalDialog";
 import { ArticulosJWT } from "./components/articulosJWT/ArticulosJWT";
 import { RequireAuth } from "./components/RequiereAuth";
 import { Login } from "./components/login/Login";
-import EmpleadoListado from "./components/EmpleadoListado";
-import EmpleadoRegistro from "./components/EmpleadoRegistro";
+import { Empleado } from "./components/empleados/Empleado"; // Importa el componente Empleado
 
 function App() {
   return (
@@ -31,10 +30,10 @@ function App() {
                 </RequireAuth>
               }
             />
+            {/* Agrega la ruta al componente Empleado */}
+            <Route path="/empleados" element={<Empleado />} />
+            {/* Fin de la nueva ruta */}
             <Route path="/login/:componentFrom" element={<Login />} />
-            <Route path="/empleados" element={<EmpleadoListado />} />
-            <Route path="/empleadoregistro" element={<EmpleadoRegistro />} />
-            <Route path="/empleadoregistro/:id" element={<EmpleadoRegistro />} />
             <Route path="*" element={<Navigate to="/inicio" replace />} />
           </Routes>
         </div>
@@ -43,5 +42,4 @@ function App() {
     </>
   );
 }
-
 export default App;

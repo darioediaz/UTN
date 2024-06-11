@@ -62,11 +62,13 @@ function Menu() {
                 Articulos JWT
               </NavLink>
             </li>
+            {/* Agregar enlace a la sección de empleados */}
             <li className="nav-item">
               <NavLink className="nav-link" to="/empleados">
                 Empleados
               </NavLink>
             </li>
+            {/* Fin del nuevo elemento de menú */}
             <li className="nav-item dropdown bg-dark">
               <a
                 className="nav-link dropdown-toggle"
