@@ -27,12 +27,23 @@ async function ActivarDesactivar(item) {
 
 
 async function Grabar(item) {
-  if (item.IdEmpleado === 0) {
-    await httpService.post(urlResource, item);
-  } else {
-    await httpService.put(urlResource + "/" + item.IdEmpleado, item);
+  try {
+    if (item.IdEmpleado === 0 || !item.IdEmpleado) {
+      // Si el ID del empleado es 0 o no está definido, es un nuevo empleado
+      await httpService.post(urlResource, item);
+    } else {
+      // Si el ID del empleado está definido, es una actualización
+      // Eliminamos el campo IdEmpleado para que el backend lo genere automáticamente
+      const { IdEmpleado, ...data } = item;
+      await httpService.put(`${urlResource}/${item.IdEmpleado}`, data);
+    }
+    console.log("Empleado grabado correctamente.");
+  } catch (error) {
+    console.error("Error al grabar empleado:", error);
+    throw error;
   }
 }
+
 
 
 export const empleadosService = {
