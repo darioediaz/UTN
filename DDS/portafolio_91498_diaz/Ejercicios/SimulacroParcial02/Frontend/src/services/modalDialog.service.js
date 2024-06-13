@@ -1,6 +1,5 @@
 let ModalDialog_Show = null;  //apunta a la funcion show del componente ModalDialog
 
-
 const Alert = (
   _mensaje,
   _titulo = "Atención",
@@ -22,7 +21,6 @@ const Alert = (
     );
 };
 
-
 const Confirm = (
   _mensaje,
   _titulo = "Confirmar",
@@ -43,7 +41,6 @@ const Confirm = (
       _tipo
     );
 };
-
 
 let cntBloquearPantalla = 0;
 const BloquearPantalla = (blnBloquear) => {
@@ -70,13 +67,10 @@ const BloquearPantalla = (blnBloquear) => {
   }
 };
 
-
 const subscribeShow = (_ModalDialog_Show) => {
   ModalDialog_Show = _ModalDialog_Show;
 };
 
-
 const modalDialogService = { Alert, Confirm, BloquearPantalla, subscribeShow };
-
 
 export default modalDialogService;
