@@ -1,51 +1,35 @@
-import axios from 'axios';
+import httpService from "./http.service";
+import { config } from "../config";
 
-const API_URL = './api/empleados';
+const urlResource = config.urlResourceEmpleados;
 
-const Buscar = async (ApellidoYNombre) => {
-  try {
-    const response = await axios.get(API_URL, { params: { ApellidoYNombre } });
-    return response.data;
-  } catch (error) {
-    throw new Error(error.response?.data?.message || error.message);
+async function Buscar(ApellidoYNombre, Activo, Pagina) {
+  const resp = await httpService.get(urlResource, {
+    params: { ApellidoYNombre, Activo, Pagina },
+  });
+  return resp.data;
+}
+
+async function BuscarPorId(id) {
+  const resp = await httpService.get(`${urlResource}/${id}`);
+  return resp.data;
+}
+
+async function ActivarDesactivar(id) {
+  await httpService.delete(`${urlResource}/${id}`);
+}
+
+async function Grabar(item) {
+  if (item.IdEmpleado === 0) {
+    await httpService.post(urlResource, item);
+  } else {
+    await httpService.put(`${urlResource}/${item.IdEmpleado}`, item);
   }
-};
-
-const BuscarPorId = async (IdEmpleado) => {
-  try {
-    const response = await axios.get(`${API_URL}/${IdEmpleado}`);
-    return response.data;
-  } catch (error) {
-    throw new Error(error.response?.data?.message || error.message);
-  }
-};
-
-const Grabar = async (data) => {
-  try {
-    if (data.IdEmpleado === 0) {
-      const response = await axios.post(API_URL, data);
-      return response.data;
-    } else {
-      const response = await axios.put(`${API_URL}/${data.IdEmpleado}`, data);
-      return response.data;
-    }
-  } catch (error) {
-    throw new Error(error.response?.data?.message || error.message);
-  }
-};
-
-const Eliminar = async (IdEmpleado) => {
-  try {
-    const response = await axios.delete(`${API_URL}/${IdEmpleado}`);
-    return response.data;
-  } catch (error) {
-    throw new Error(error.response?.data?.message || error.message);
-  }
-};
+}
 
 export const empleadosService = {
   Buscar,
   BuscarPorId,
+  ActivarDesactivar,
   Grabar,
-  Eliminar,
 };

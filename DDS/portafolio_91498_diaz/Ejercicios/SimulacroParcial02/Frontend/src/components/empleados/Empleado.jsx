@@ -29,8 +29,8 @@ function Empleados() {
   async function Buscar(data) {
     modalDialogService.BloquearPantalla(true);
     try {
-      const empleados = await empleadosService.Buscar(data?.ApellidoYNombre || "");
-      setItems(empleados);
+      const empleados = await empleadosService.Buscar(data?.ApellidoYNombre || "", true, 1);
+      setItems(empleados.Items);
     } catch (error) {
       modalDialogService.Alert("Error al buscar empleados");
     } finally {
@@ -79,7 +79,7 @@ function Empleados() {
       undefined,
       async () => {
         try {
-          await empleadosService.Eliminar(item.IdEmpleado);
+          await empleadosService.ActivarDesactivar(item.IdEmpleado);
           await Buscar();
         } catch (error) {
           modalDialogService.Alert(error.message);
@@ -90,13 +90,10 @@ function Empleados() {
 
   async function Grabar(data) {
     try {
-      if (AccionABMC === "A") {
-        await empleadosService.Grabar(data);
-        modalDialogService.Alert("Registro agregado correctamente.");
-      } else {
-        await empleadosService.Grabar(data);
-        modalDialogService.Alert("Registro modificado correctamente.");
-      }
+      await empleadosService.Grabar(data);
+      modalDialogService.Alert(
+        `Registro ${AccionABMC === "A" ? "agregado" : "modificado"} correctamente.`
+      );
       await Buscar();
       Volver();
     } catch (error) {
