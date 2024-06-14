@@ -24,32 +24,45 @@ function Empleado() {
   const [Pagina, setPagina] = useState(1);
   const [Paginas, setPaginas] = useState([]);
 
-  // Monta el componente
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        modalDialogService.BloquearPantalla(true);
-        const data = await empleadosService.Buscar(
-          ApellidoYNombre,
-          Suspendido,
-          Pagina
-        );
-        setItems(data.Items);
-        setRegistrosTotal(data.RegistrosTotal);
-        const arrPaginas = [];
-        for (let i = 1; i <= Math.ceil(data.RegistrosTotal / 10); i++) {
-          arrPaginas.push(i);
-        }
-        setPaginas(arrPaginas);
-      } catch (error) {
-        console.error("Error al cargar datos:", error);
-      } finally {
-        modalDialogService.BloquearPantalla(false);
-      }
-    }
+  // // Monta el componente SIN SELECCIONAR BOTON <BUSCAR>
+  // (pero se debe borrar la linea 201 <Empleado={Empleado}>)
 
-    fetchData();
-  }, [ApellidoYNombre, Suspendido, Pagina]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       modalDialogService.BloquearPantalla(true);
+  //       const data = await empleadosService.Buscar(
+  //         ApellidoYNombre,
+  //         Suspendido,
+  //         Pagina
+  //       );
+  //       setItems(data.Items);
+  //       setRegistrosTotal(data.RegistrosTotal);
+  //       const arrPaginas = [];
+  //       for (let i = 1; i <= Math.ceil(data.RegistrosTotal / 10); i++) {
+  //         arrPaginas.push(i);
+  //       }
+  //       setPaginas(arrPaginas);
+  //     } catch (error) {
+  //       console.error("Error al cargar datos:", error);
+  //     } finally {
+  //       modalDialogService.BloquearPantalla(false);
+  //     }
+  //   }
+
+  //   fetchData();
+  // }, [ApellidoYNombre, Suspendido, Pagina]);
+  
+  // Monta el componente SELECCIONANDO BOTON <BUSCAR>
+  const [Empleado, setEmpleado] = useState(null);
+
+  useEffect(() => {
+    async function BuscarEmpleados() {
+      let data = await empleadosService.Buscar();
+      setEmpleado(data);
+    }
+    BuscarEmpleados();
+  }, []);
 
   // Funcion para BUSCAR por consulta en el textbox
   async function Buscar(_pagina) {
@@ -186,6 +199,7 @@ function Empleado() {
       {AccionABMC !== "L" && (
         <EmpleadosRegistro
           AccionABMC={AccionABMC}
+          Empleado={Empleado}
           Item={Item}
           Grabar={Grabar}
           Volver={Volver}
