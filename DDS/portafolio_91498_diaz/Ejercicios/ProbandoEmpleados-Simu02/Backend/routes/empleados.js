@@ -34,7 +34,7 @@ router.get('/api/empleados', async (req, res) => {
 });
 
 // Obtener un empleado por su Id
-router.get('/api/empleados:id', async (req, res) => {
+router.get('/api/empleados/:id', async (req, res) => {
   try {
     const empleado = await db.empleados.findByPk(req.params.id);
     if (empleado) {

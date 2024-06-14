@@ -6,7 +6,6 @@ import httpService from "./http.service";
  import {config} from "../config";
  const urlResource = config.urlResourceEmpleados;
 
-
 async function Buscar(ApellidoYNombre, Suspendido, Pagina) {
   const resp = await httpService.get(urlResource, {
     params: { ApellidoYNombre, Suspendido, Pagina },
@@ -14,17 +13,14 @@ async function Buscar(ApellidoYNombre, Suspendido, Pagina) {
   return resp.data;
 }
 
-
 async function BuscarPorId(item) {
   const resp = await httpService.get(urlResource + "/" + item.IdEmpleado);
   return resp.data;
 }
 
-// revisar, porque borra al empleado y no lo suspende
-async function ActivarDesactivar(item) {
+async function EliminarEmpleado(item) {
   await httpService.delete(urlResource + "/" + item.IdEmpleado);
 }
-
 
 async function Grabar(item) {
   try {
@@ -44,8 +40,6 @@ async function Grabar(item) {
   }
 }
 
-
-
 export const empleadosService = {
-  Buscar,BuscarPorId,ActivarDesactivar,Grabar
+  Buscar,BuscarPorId,EliminarEmpleado,Grabar
 };

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import moment from "moment";
-import EmpleadosBuscar from "./EmpleadosBuscar"; // Asumiendo que este es el nombre correcto del componente
-import EmpleadosListado from "./EmpleadosListado"; // Asumiendo que este es el nombre correcto del componente
-import EmpleadosRegistro from "./EmpleadosRegistro"; // Asumiendo que este es el nombre correcto del componente
+import React, { useEffect, useState } from "react";
 import { empleadosService } from "../../services/empleados.service";
 import modalDialogService from "../../services/modalDialog.service";
+
+import EmpleadosBuscar from "./EmpleadosBuscar";
+import EmpleadosListado from "./EmpleadosListado";
+import EmpleadosRegistro from "./EmpleadosRegistro";
 
 function Empleado() {
   const TituloAccionABMC = {
@@ -17,17 +17,23 @@ function Empleado() {
   const [AccionABMC, setAccionABMC] = useState("L");
   const [ApellidoYNombre, setApellidoYNombre] = useState("");
   const [Suspendido, setSuspendido] = useState("");
+
   const [Items, setItems] = useState(null);
   const [Item, setItem] = useState(null);
   const [RegistrosTotal, setRegistrosTotal] = useState(0);
   const [Pagina, setPagina] = useState(1);
   const [Paginas, setPaginas] = useState([]);
 
+  // Monta el componente
   useEffect(() => {
     async function fetchData() {
       try {
         modalDialogService.BloquearPantalla(true);
-        const data = await empleadosService.Buscar(ApellidoYNombre, Suspendido, Pagina);
+        const data = await empleadosService.Buscar(
+          ApellidoYNombre,
+          Suspendido,
+          Pagina
+        );
         setItems(data.Items);
         setRegistrosTotal(data.RegistrosTotal);
         const arrPaginas = [];
@@ -45,6 +51,7 @@ function Empleado() {
     fetchData();
   }, [ApellidoYNombre, Suspendido, Pagina]);
 
+  // Funcion para BUSCAR por consulta en el textbox
   async function Buscar(_pagina) {
     if (_pagina && _pagina !== Pagina) {
       setPagina(_pagina);
@@ -52,7 +59,11 @@ function Empleado() {
       _pagina = Pagina;
     }
     modalDialogService.BloquearPantalla(true);
-    const data = await empleadosService.Buscar(ApellidoYNombre, Suspendido, _pagina);
+    const data = await empleadosService.Buscar(
+      ApellidoYNombre,
+      Suspendido,
+      _pagina
+    );
     modalDialogService.BloquearPantalla(false);
     setItems(data.Items);
     setRegistrosTotal(data.RegistrosTotal);
@@ -63,24 +74,24 @@ function Empleado() {
     setPaginas(arrPaginas);
   }
 
+  // Funcion para BUSCAR POR ID
   async function BuscarPorId(item, accionABMC) {
     const data = await empleadosService.BuscarPorId(item);
     setItem(data);
     setAccionABMC(accionABMC);
   }
-
+  
+  // Funcion para CONSULTAR
   function Consultar(item) {
     BuscarPorId(item, "C");
   }
 
+  // Funcion para MODIFICAR
   function Modificar(item) {
-    if (!item.Suspendido) {
-      modalDialogService.Alert("No puede modificarse un empleado suspendido.");
-      return;
-    }
     BuscarPorId(item, "M");
   }
 
+  // Funcion para AGREGAR
   async function Agregar() {
     setAccionABMC("A");
     setItem({
@@ -92,34 +103,41 @@ function Empleado() {
     });
   }
 
+  // Funcion para IMPRIMIR (actualmente no utilizada) 
   function Imprimir() {
     modalDialogService.Alert("En desarrollo...");
   }
 
-  async function ActivarDesactivar(item) {
+  // Funcion para ELIMINAR
+  async function EliminarEmpleado(item) {
     modalDialogService.Confirm(
-      `¿Está seguro que quiere ${item.Suspendido ? "suspender" : "reincorporar"} el registro?`,
+      `¿Está seguro que quiere eliminar el registro?`,
       undefined,
       undefined,
       undefined,
       async () => {
-        await empleadosService.ActivarDesactivar(item);
+        await empleadosService.EliminarEmpleado(item);
         await Buscar();
       }
     );
   }
 
+  // Funcion para AGREGAR o MODIFICAR
   async function Grabar(item) {
     try {
       await empleadosService.Grabar(item);
     } catch (error) {
-      modalDialogService.Alert(error?.response?.data?.message ?? error.toString());
+      modalDialogService.Alert(
+        error?.response?.data?.message ?? error.toString()
+      );
       return;
     }
     await Buscar();
     Volver();
     modalDialogService.Alert(
-      `Registro ${AccionABMC === "A" ? "agregado" : "modificado"} correctamente.`
+      `Registro ${
+        AccionABMC === "A" ? "agregado" : "modificado"
+      } correctamente.`
     );
   }
 
@@ -149,7 +167,7 @@ function Empleado() {
           Items={Items}
           Consultar={Consultar}
           Modificar={Modificar}
-          ActivarDesactivar={ActivarDesactivar}
+          EliminarEmpleado={EliminarEmpleado}
           Imprimir={Imprimir}
           Pagina={Pagina}
           RegistrosTotal={RegistrosTotal}

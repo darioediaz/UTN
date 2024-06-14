@@ -5,7 +5,7 @@ export default function EmpleadosListado({
   Items,
   Consultar,
   Modificar,
-  ActivarDesactivar,
+  EliminarEmpleado,
   Imprimir,
   Pagina,
   RegistrosTotal,
@@ -17,8 +17,8 @@ export default function EmpleadosListado({
       <table className="table table-hover table-sm table-bordered table-striped">
         <thead>
           <tr>
-            <th className="text-center">ApellidoYNombre</th>
-            <th className="text-center">Dni</th>
+            <th className="text-center">Apellido y Nombre</th>
+            <th className="text-center">DNI</th>
             <th className="text-center">Fecha de Nacimiento</th>
             <th className="text-center">Suspendido</th>
             <th className="text-center text-nowrap">Acciones</th>
@@ -50,17 +50,12 @@ export default function EmpleadosListado({
                     <i className="fa fa-pencil"></i>
                   </button>
                   <button
-                    className={
-                      "btn btn-sm " +
-                      (Item.Suspendido
-                        ? "btn-outline-danger"
-                        : "btn-outline-success")
-                    }
-                    title={Item.Suspendido ? "Desactivar" : "Activar"}
-                    onClick={() => ActivarDesactivar(Item)}
+                    className="btn btn-sm btn-outline-danger"
+                    title="Eliminar"
+                    onClick={() => EliminarEmpleado(Item)}
                   >
                     <i
-                      className={"fa fa-" + (Item.Suspendido ? "times" : "check")}
+                      className={"fa fa-trash"}
                     ></i>
                   </button>
                 </td>

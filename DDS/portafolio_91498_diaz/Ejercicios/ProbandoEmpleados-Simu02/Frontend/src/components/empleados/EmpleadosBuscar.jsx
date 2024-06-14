@@ -6,7 +6,7 @@ export default function EmpleadosBuscar ({ApellidoYNombre, setApellidoYNombre, S
       <div className="container-fluid">
         <div className="row">
           <div className="col-sm-4 col-md-2">
-            <label className="col-form-label">ApellidoYNombre:</label>
+            <label className="col-form-label">Apellido y Nombre:</label>
           </div>
           <div className="col-sm-8 col-md-4">
             <input

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function EmpleadosRegistro({
@@ -90,7 +90,7 @@ export default function EmpleadosRegistro({
           <div className="row">
             <div className="col-sm-4 col-md-3 offset-md-1">
               <label className="col-form-label" htmlFor="FechaNacimiento">
-                Fecha Alta<span className="text-danger">*</span>:
+                Fecha de Nacimiento<span className="text-danger">*</span>:
               </label>
             </div>
             <div className="col-sm-8 col-md-6">
@@ -125,7 +125,6 @@ export default function EmpleadosRegistro({
                 className={
                   "form-control" + (errors?.Suspendido ? " is-invalid" : "")
                 }
-                disabled
               >
                 <option value={null}></option>
                 <option value={false}>NO</option>
