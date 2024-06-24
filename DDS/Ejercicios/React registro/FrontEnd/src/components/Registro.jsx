@@ -60,7 +60,7 @@ function Registro() {
                     </div>
                     <div className="row justify-content-center p-2">
                         <div className="col text-center">
-                            <button type="submit" className="btn btn-success">Registrar</button>
+                            <button type="submit" className="btn btn-success" onClick={()=>navigate("/consulta")}>Registrar</button>
                         </div>
                         <div className="col text-center">
                           <button type="button" className="btn btn-secondary" onClick={()=>navigate("/")}>Volver</button>

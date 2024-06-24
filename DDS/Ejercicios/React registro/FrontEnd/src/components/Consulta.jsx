@@ -44,7 +44,7 @@ function Consulta() {
                     )}
                 </tbody>
             </table>
-            <button className="btn btn-secondary m-2" onClick={()=>navigate("/")}>Volver</button>
+            <button className="btn btn-secondary m-2" onClick={()=>navigate("/registro")}>Volver</button>
         </div>
     );
 }
