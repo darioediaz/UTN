@@ -29,3 +29,4 @@ router.get("/api/socios", async function (req, res) {
 });
 
 module.exports = router;
+
